@@ -1,4 +1,3 @@
-
 import { Character, ModelProviderName, settings, validateCharacterConfig } from "@elizaos/core";
 import fs from "fs";
 import path from "path";
@@ -99,5 +98,9 @@ export function getTokenForProvider(
       );
     case ModelProviderName.GROQ:
       return character.settings?.secrets?.GROQ_API_KEY || settings.GROQ_API_KEY;
+    case ModelProviderName.DEEPSEEK:
+      return character.settings?.secrets?.DEEPSEEK_API_KEY || settings.DEEPSEEK_API_KEY;
+    case ModelProviderName.AKASH:
+      return character.settings?.secrets?.AKASH_API_KEY || settings.AKASH_API_KEY;
   }
 }
